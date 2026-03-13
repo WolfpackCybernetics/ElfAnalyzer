@@ -1132,7 +1132,7 @@ class ELFAnalyzer:
             raise ImportError("numpy is required for to_numpy_npz(). Install with: pip install numpy") from e
 
         row           = self._build_flat_row()
-        string_keys   = {"binary_path", "md5", "sha256", "arch_machine", "arch_abi", "arch_elf_type", "arch_entry_point"}
+        string_keys   = {"original_path", "md5", "sha256", "arch_machine", "arch_abi", "arch_elf_type", "arch_entry_point", "import_names", "asm_wl_histogram"}
         numeric_items = [(k, v) for k, v in row.items() if k not in string_keys]
 
         feature_names = [k for k, _ in numeric_items]
